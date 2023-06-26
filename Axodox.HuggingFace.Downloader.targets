@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="HuggingFaceDownloader" BeforeTargets="AfterBuild">
+    <PropertyGroup>
+      <PowerShellPath Condition="'$(PowerShellPath)'=='' ">$(WINDIR)\System32\WindowsPowerShell\v1.0\powershell.exe</PowerShellPath>
+      <AxodoxHuggingFaceDownloader-Destination>$(SolutionDir)\models</AxodoxHuggingFaceDownloader-Destination>
+      <AxodoxHuggingFaceDownloader-Config>$(ProjectDir)\huggingface.json</AxodoxHuggingFaceDownloader-Config>
+    </PropertyGroup>
+
+    <Message Text="Downloading HuggingFace models..." Importance="High"/>
+    <Exec Command="$(PowerShellPath) -NonInteractive -ExecutionPolicy Unrestricted -File &quot;$(MSBuildThisFileDirectory)Execute-HuggingFaceTasks.ps1&quot; -config &quot;$(AxodoxHuggingFaceDownloader-Config)&quot; -destination &quot;$(AxodoxHuggingFaceDownloader-Destination)&quot;"/>
+  </Target>
+</Project>

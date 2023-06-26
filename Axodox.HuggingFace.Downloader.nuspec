@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <!-- The identifier that must be unique within the hosting gallery -->
+    <id>Axodox.HuggingFace.Downloader</id>
+
+    <!-- The package version number that is used when resolving dependencies -->
+    <version>1.0.0.0</version>
+
+    <!-- Authors contain text that appears directly on the gallery -->
+    <authors>Péter Major</authors>
+
+    <!-- Owners are typically nuget.org identities that allow gallery
+         users to earily find other packages by the same owners.  -->
+    <owners>axodox</owners>
+
+    <!-- License and project URLs provide links for the gallery -->
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/axodox/hugging-face-downloader</projectUrl>
+    <repository type="git" url="https://github.com/axodox/hugging-face-downloader.git" branch="main"/>
+
+    <!-- The icon is used in Visual Studio's package manager UI -->
+    <!--<icon>icon.png</icon>-->
+
+    <!-- If true, this value prompts the user to accept the license when
+             installing the package. -->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
+    <!-- Any details about this particular release -->
+    <releaseNotes>Initial release</releaseNotes>
+
+    <!-- The description can be used in package manager UI. Note that the
+             nuget.org gallery uses information you add in the portal. -->
+    <description>Nuget like HuggingFace.co model support for Visual Studio projects.</description>
+
+    <!-- Copyright information -->
+    <copyright>Copyright ©2023 Péter Major</copyright>
+
+    <!-- Tags appear in the gallery and can be used for tag searches -->
+    <tags>HuggingFace AI Nuget</tags>
+  </metadata>
+
+  <!-- A readme.txt will be displayed when the package is installed -->
+  <files>
+    <file src="readme.md"/>
+
+    <file src="Axodox.HuggingFace.Downloader.targets" target="build\native"/>
+    <file src="Download-HuggingFaceModel.ps1" target="build\native"/>
+    <file src="Execute-HuggingFaceTasks.ps1" target="build\native"/>
+  </files>
+</package>

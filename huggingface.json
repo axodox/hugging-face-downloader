@@ -1,0 +1,11 @@
+[
+  {
+    "repository": "axodoxian/realistic_vision_onnx",
+    "filter": "tokenizer/*;safety_checker/*.onnx",
+    "destination": "modelA"
+  },
+  {
+    "repository": "axodoxian/stable_diffusion_onnx",
+    "filter": "tokenizer/*;safety_checker/*.onnx"
+  }
+]
